@@ -10,7 +10,7 @@ Main reason (and target) is to use this image to build Jenkins which is able to 
 The most convinient way is to:
 
 * download [this docker -compose file](https://github.com/filug/docker-jenkins/blob/docker-compose.yml),
-* customize it (check [this link](https://docs.docker.com/compose/gettingstarted/#/step-3-define-services),
+* customize it (check [this link](https://docs.docker.com/compose/gettingstarted/#/step-3-define-services)),
 * and setup working container as documented [here](https://docs.docker.com/compose/gettingstarted/#/step-4-build-and-run-your-app-with-compose).
 
 ## Traditional way
