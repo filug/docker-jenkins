@@ -3,6 +3,17 @@
 Fork of official Jenkins docker with few extensions to simplify using it for embedded projects.
 Main reason (and target) is to use this image to build Jenkins which is able to build [Buildroot](https://buildroot.org/) based project.
 
+# Versioning
+
+First three values shows Jenkins version used by docker.
+Because for this same Jenkins version several dockers (with various bugfixes/improvements)
+can be released, the last value is an incremented counter with information which docker version for this same Jenkins is created.
+
+For example 2.19.1.1 means:
+
+* 2.19.1 - Jenkins version,
+* 1 - first docker release for Jenkins 2.19.1.
+
 # Usage
 
 ## Docker compose
