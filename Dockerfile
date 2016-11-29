@@ -1,12 +1,13 @@
-FROM library/jenkins:2.19.1
+FROM library/jenkins:2.19.3
 
 MAINTAINER piotr.figlarek@gmail.com
 
 USER root
 
 # Buildroot requirements and some handy tools used during software compilation, testing, etc.
-RUN apt-get update && apt-get install -y sudo make gcc g++ patch cpio rsync bc graphviz \
-    python-pip doxygen cmake git ruby vim locales
+RUN apt-get update && apt-get install -y sudo sed make binutils build-essential gcc g++ bash patch \
+    gzip bzip2 perl tar cpio python unzip rsync wget cvs git mercurial subversion bc graphviz \
+    python-pip python-matplotlib doxygen cmake git ruby vim locales file curl
 
 # Sphinx documentation generator
 RUN pip install -U Sphinx sphinxcontrib-plantuml
@@ -32,5 +33,9 @@ ENV LANGUAGE en_US
 ENV LC_ALL en_US.UTF-8
 # verify modified configuration
 RUN dpkg-reconfigure --frontend noninteractive locales
+
+# repo command (from Android), see https://source.android.com/source/using-repo.html
+RUN curl https://storage.googleapis.com/git-repo-downloads/repo > /bin/repo
+RUN chmod a+x /bin/repo
 
 USER jenkins
