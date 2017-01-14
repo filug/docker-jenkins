@@ -1,3 +1,9 @@
+2.32.1.1
+========
+
+* upgraded Jenknins to 2.32.1
+* upgraded pip to 9.x version due to problems with pip after Sphinx package
+
 2.19.3.1
 ========
 
