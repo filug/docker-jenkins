@@ -1,4 +1,4 @@
-FROM library/jenkins:2.19.3
+FROM library/jenkins:2.32.1
 
 MAINTAINER piotr.figlarek@gmail.com
 
@@ -8,6 +8,9 @@ USER root
 RUN apt-get update && apt-get install -y sudo sed make binutils build-essential gcc g++ bash patch \
     gzip bzip2 perl tar cpio python unzip rsync wget cvs git mercurial subversion bc graphviz \
     python-pip python-matplotlib doxygen cmake git ruby vim locales file curl
+
+# Upgrade pip version
+RUN pip install -I --upgrade pip
 
 # Sphinx documentation generator
 RUN pip install -U Sphinx sphinxcontrib-plantuml
